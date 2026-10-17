@@ -18,8 +18,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Birthday, Nur Ayu Faisah ❤️",
-  description: "A special birthday gift for Nur Ayu Faisah ❤️",
+  title: "All days belong to pinii",
+  description: "A special gift for Afini Nur Rohmah",
 };
 
 export default function RootLayout({
