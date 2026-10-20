@@ -275,82 +275,79 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
 // --- Step 4: Typewriter ---
 
 const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
-  const paragraphs = [
-    "Hallo pinii \nApi kita 200 Yeyyyyy!",
-    "Ganyangka ya kita bisa sedeket ini pinn, yang awalnya cuman satu grup saling save, trus kita saling follow tiktok trus ig juga, trus dupen pernah post story buat map roblox dan itu dikomen sama pinii \"inpoo azaa map-nya\" ini pas 3 September 2025, udah itu kita hampir gapernah chattan, sampe dupen live tiktok pas 17 Januari, pinii komenn sampe dimana pini nanya sec account dupen, dari situlah dimulai kita mulai chattan sering tapi ga sering banget pas januarinya, akhirnya kita bikin api di 28 februari, banyak banget lika liku ternyata bisa sampai sekarang.",
-    "Pini pernah nanya ke dupen \"percaya ga jodoh itu cerminan diri\" padahal mah jodohnya di depan mata heheee, pini juga bilang \"ada juga yang berbeda tapi melengkapi\". Pini juga pernah ngirim video tiktok pas 18 mei: \"i choose you. and i'll choose you over and over. without pause, without a doubt. in a heartbeat. i'll keep choosing you.\" Sekarang bagiann dupen yang bakal buktiin.",
-    "Makasi ya pinii buat semuanya, trus maaf juga mungkin terkadang dupen nyebelin. Dupen berharap kita sama usahainn teruss supaya kita teruss bersama, trus jugaa dupen berharap kita punya satu tujuan yang sama, semogaa tahapan ini sampai, truss dupenn mau kita berkembang bareng bareng, dupen jugaa seneng banget kalau dilibatkan dalam kehidupan pini.",
-    "Owh iya pin dupen juga sekarang sering pulang ke Serang kan, terkadang juga dupenn seneng di Cilegon. Kalau dupen ke Serang tu berharap pini mau ngajakin maen hehee, atau butuh sesuatu dupen bisa langsung otw. Kalau di Cilegon trus ngasih taunya malem, kemungkinannya takut gajadi maen kaya waktu itu karena kemaleman, tapi kalau butuh sesuatu di Cilegon juga bisa, cuman kalau di Serang bisa lebih cepet. Trus kalau yang dupen seneng di Cilegon, kalau pinii lagi sibuk dan mau callan biar lebih seru dan gaberisik dupen langsung ke Cilegon, begitu deh.",
-    "Pini dupenn boleh minta sesuatu tida, dupen pengen pini ngabarin dupen apapun itu, tapi kalau semisal pini ada masalah dan ga sempet ngabarin dupenn, its okeii tida apa-apa, soalnya kabar pini tu penting banget bagi dupen. Pini juga kalau mau ceritaa apapun ituu dupen dengerin ko, kalau yang tentang cerita ini pini juga udah ngasih tau dupen kan. Okeii tapi pini perlu tauu kalau pini mau cerita apapun itu serandom apapun itu dupenn mau dengerin ko, trus pinii jugaa gaperlu sungkan sama dupen, kalau butuh sesuatu, jemput, anter, butuh dupen langsung buat cerita atau apapun itu, dupenn usahain, dupenn gamau pini ngerasa sendiri.",
-    "Dupen juga mau nanya boleh tida, pini pernah ga si takut kehilangan dupen? Arah kita satu tujuan kan pin? Ada hal ga yang pini butuh dari dupen tapi pini gaberani minta? Ada ga ketakutan pini buat ngejalanin hubungan ini yang ga dupen tau? Tapi pinii bisa liatt dupenn, dupen juga gapernah neko neko kalau udah nyiapin buat hubungan apa lagi sampe ngejalaninya. Prinsip dupen gini: \"dupen bakal usahain apapun ituu buat pinii selagi dupen bisa\" trus juga \"selagi dupenn ga macem macem disini, maka pini juga gabakal macem macem\". Ini anggapan karena kita jarang ketemu. Owh iyaa dari semua pertanyaan ini dupen mau tau sama mau ngeyakinin pini, kalau buatt waktunya sambil berjalan dupen tunggu koo.",
-    "dupenn bakal belajar semua buat pinii 🫶🏼"
-  ];
+
+const TypewriterStep = ({
+  onComplete,
+}: {
+  onComplete: () => void;
+}) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const title = "Untuk Cantikku Pini";
+    let index = 0;
+
+    let fadeTimer: ReturnType<typeof setTimeout>;
+    let nextPageTimer: ReturnType<typeof setTimeout>;
+
+    const typingTimer = setInterval(() => {
+      index += 1;
+      setDisplayedText(title.slice(0, index));
+
+      if (index >= title.length) {
+        clearInterval(typingTimer);
+
+        fadeTimer = setTimeout(() => {
+          setIsFading(true);
+        }, 900);
+
+        nextPageTimer = setTimeout(() => {
+          onComplete();
+        }, 1900);
+      }
+    }, 130);
+
+    return () => {
+      clearInterval(typingTimer);
+      clearTimeout(fadeTimer);
+      clearTimeout(nextPageTimer);
+    };
+  }, [onComplete]);
 
   return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-[#100712] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(190,70,130,0.13),transparent_70%)]" />
-
-      <img
-        src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=500&q=80"
-        alt=""
-        className="pointer-events-none absolute left-0 top-0 h-44 w-28 object-cover object-center opacity-75 [mask-image:linear-gradient(to_bottom,black,transparent)] sm:h-64 sm:w-44"
-      />
-
-      <img
-        src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?auto=format&fit=crop&w=500&q=80"
-        alt=""
-        className="pointer-events-none absolute bottom-0 right-0 h-48 w-32 rotate-180 object-cover object-center opacity-75 [mask-image:linear-gradient(to_top,black,transparent)] sm:h-72 sm:w-48"
-      />
-
-      <div className="relative z-10 h-full overflow-y-auto px-4 py-8 sm:px-8 sm:py-12">
-        <article className="mx-auto max-w-2xl rounded-3xl border border-pink-300/25 bg-[#120a13]/90 px-5 py-8 shadow-[0_0_45px_rgba(236,72,153,0.10)] sm:px-10 sm:py-12">
-          <h1 className="mb-3 text-center font-serif text-3xl italic text-pink-300 sm:text-5xl">
-            Untuk Pinii ♡
-          </h1>
-
-          <p className="mb-2 text-center font-serif italic text-pink-100">
-            Sebuah surat kecil dari Dupen
-          </p>
-
-          <div className="mb-8 text-center text-pink-300">
-            ───── ♡ ─────
-          </div>
-
-          {paragraphs.map((paragraph, index) => (
-            <p
-              key={index}
-              className={`mb-6 whitespace-pre-line text-sm leading-7 text-pink-50/90 sm:text-base sm:leading-8 ${
-                index === 0 || index === paragraphs.length - 1
-                  ? "text-center font-serif text-lg italic text-pink-300 sm:text-xl"
-                  : ""
-              }`}
-            >
-              {paragraph}
-            </p>
-          ))}
-
-          <div className="mt-8 text-center text-pink-300">
-            ───── ♡ ─────
-          </div>
-
-          <p className="mt-5 text-center text-xs text-pink-100/70">
-            Scroll pelan-pelan ke bawah ya, Pinii... ♡
-          </p>
-
-          <button
-            onClick={onComplete}
-            className="mt-8 block w-full rounded-full border border-pink-300/40 px-5 py-3 text-sm text-pink-200 transition hover:bg-pink-400/10"
-          >
-            Peluk jauh buat Pinii ♡
-          </button>
-        </article>
-      </div>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{
+        opacity: isFading ? 0 : 1,
+        scale: isFading ? 0.98 : 1,
+      }}
+      transition={{ duration: 0.9, ease: "easeInOut" }}
+      className="relative z-10 flex min-h-screen w-full
+      items-center justify-center px-6 text-center"
+    >
+      <h1 className="font-sans text-2xl font-light
+      tracking-[0.12em] text-pink-100 sm:text-4xl">
+        {displayedText}
+        <span className="ml-1 animate-pulse text-pink-300">
+          |
+        </span>
+      </h1>
+    </motion.div>
   );
 };
 
-export default function InteractionFlow({ onFlowComplete }: { onFlowComplete: () => void }) {
-    const [step, setStep] = useState(1);
+
+export default function InteractionFlow({onFlowComplete,}: {onFlowComplete: () => void;}) {
+  return (
+    <div className="fixed inset-0 z-50 flex
+    items-center justify-center overflow-hidden bg-[#060010]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,153,0.12)_0%,transparent_70%)]" />
+
+      <TypewriterStep onComplete={onFlowComplete} />
+    </div>
+  );
+}
 
     return (
         <div className="fixed inset-0 z-50 bg-[#060010] flex items-center justify-center overflow-hidden">
