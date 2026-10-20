@@ -273,23 +273,20 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
 };
 
 // --- Step 4: Typewriter ---
-
-const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
-
 const TypewriterStep = ({
   onComplete,
 }: {
   onComplete: () => void;
 }) => {
-  const [displayedText, setDisplayedText] = useState("");
+  const [displayedText, setDisplayedText] = useState('');
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const title = "Untuk Cantikku Pini";
+    const title = 'Untuk Cantikku Pini';
     let index = 0;
 
     let fadeTimer: ReturnType<typeof setTimeout>;
-    let nextPageTimer: ReturnType<typeof setTimeout>;
+    let nextTimer: ReturnType<typeof setTimeout>;
 
     const typingTimer = setInterval(() => {
       index += 1;
@@ -300,54 +297,37 @@ const TypewriterStep = ({
 
         fadeTimer = setTimeout(() => {
           setIsFading(true);
-        }, 900);
+        }, 1000);
 
-        nextPageTimer = setTimeout(() => {
+        nextTimer = setTimeout(() => {
           onComplete();
-        }, 1900);
+        }, 2000);
       }
     }, 130);
 
     return () => {
       clearInterval(typingTimer);
       clearTimeout(fadeTimer);
-      clearTimeout(nextPageTimer);
+      clearTimeout(nextTimer);
     };
   }, [onComplete]);
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.98 }}
-      animate={{
-        opacity: isFading ? 0 : 1,
-        scale: isFading ? 0.98 : 1,
-      }}
-      transition={{ duration: 0.9, ease: "easeInOut" }}
-      className="relative z-10 flex min-h-screen w-full
-      items-center justify-center px-6 text-center"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isFading ? 0 : 1 }}
+      transition={{ duration: 1, ease: 'easeInOut' }}
+      className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center"
     >
-      <h1 className="font-sans text-2xl font-light
-      tracking-[0.12em] text-pink-100 sm:text-4xl">
+      <h1 className="font-sans text-2xl font-light tracking-[0.12em] text-pink-100 sm:text-4xl">
         {displayedText}
-        <span className="ml-1 animate-pulse text-pink-300">
-          |
-        </span>
+        {!isFading && (
+          <span className="ml-1 animate-pulse text-pink-300">|</span>
+        )}
       </h1>
     </motion.div>
   );
 };
-
-
-export default function InteractionFlow({onFlowComplete,}: {onFlowComplete: () => void;}) {
-  return (
-    <div className="fixed inset-0 z-50 flex
-    items-center justify-center overflow-hidden bg-[#060010]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(239,68,153,0.12)_0%,transparent_70%)]" />
-
-      <TypewriterStep onComplete={onFlowComplete} />
-    </div>
-  );
-}
 
     return (
         <div className="fixed inset-0 z-50 bg-[#060010] flex items-center justify-center overflow-hidden">
