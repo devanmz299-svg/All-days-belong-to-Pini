@@ -124,132 +124,66 @@ const LoveModeStep = ({ onComplete }: { onComplete: () => void }) => {
     );
 };
 
-// --- Step 2: Tic-Tac-Toe ---
-const TicTacToeStep = ({ onComplete }: { onComplete: () => void }) => {
-    const [board, setBoard] = useState(Array(9).fill(null));
-    const [isUserTurn, setIsUserTurn] = useState(true);
-    const [winner, setWinner] = useState<string | null>(null);
-    const [message, setMessage] = useState("Let's play a little game...");
+// --- Step 2: GirlfriendQuestion ---
+const GirlfriendQuestionStep = ({
+  onComplete,
+}: {
+  onComplete: () => void;
+}) => {
+  const [noPosition, setNoPosition] = useState({
+    top: 50,
+    left: 68,
+  });
 
-    const checkWinner = useCallback((squares: (string | null)[]) => {
-        const lines = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8],
-            [0, 3, 6], [1, 4, 7], [2, 5, 8],
-            [0, 4, 8], [2, 4, 6]
-        ];
-        for (const [a, b, c] of lines) {
-            if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-                return squares[a];
-            }
-        }
-        return squares.includes(null) ? null : 'draw';
-    }, []);
+  const moveNo = () => {
+    setNoPosition({
+      top: 10 + Math.random() * 75,
+      left: 5 + Math.random() * 75,
+    });
+  };
 
-    const makeAIMove = useCallback((currentBoard: (string | null)[]) => {
-        const emptyIndices = currentBoard.map((v, i) => v === null ? i : null).filter(v => v !== null) as number[];
-        if (emptyIndices.length === 0) return;
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[#060010] px-5 text-center text-white">
+      <div className="w-full max-w-md rounded-3xl border border-pink-400/30 bg-white/5 p-6 shadow-2xl">
+        <div className="mb-4 text-5xl">💗</div>
 
-        // Extra Easy AI: Purposely avoid the center and pick random spots
-        const nonCenterIndices = emptyIndices.filter(i => i !== 4);
-        const targetIndex = nonCenterIndices.length > 0
-            ? nonCenterIndices[Math.floor(Math.random() * nonCenterIndices.length)]
-            : 4;
+        <h2 className="mb-3 text-2xl font-bold text-pink-300">
+          Will you be my girlfriend?
+        </h2>
 
-        const newBoard = [...currentBoard];
-        newBoard[targetIndex] = 'O';
-        setBoard(newBoard);
+        <p className="mb-5 text-sm text-pink-100">
+          Aku punya satu pertanyaan penting buat kamu...
+        </p>
 
-        const result = checkWinner(newBoard);
-        if (result) {
-            setWinner(result);
-        } else {
-            setIsUserTurn(true);
-        }
-    }, [checkWinner]);
+        <div className="relative h-48 w-full overflow-hidden rounded-2xl">
+          <button
+            onClick={onComplete}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-500 px-8 py-3 font-bold text-white shadow-lg transition hover:scale-110"
+          >
+            Iya ,❤️
+          </button>
 
-    const handleSquareClick = (index: number) => {
-        if (board[index] || winner || !isUserTurn) return;
+          <button
+            onMouseEnter={moveNo}
+            onClick={moveNo}
+            style={{
+              position: "absolute",
+              top: `${noPosition.top}%`,
+              left: `${noPosition.left}%`,
+              transform: "translate(-50%, -50%)",
+            }}
+            className="rounded-full bg-gray-600 px-6 py-2 font-semibold text-white transition-all duration-150"
+          >
+            Tidak 🙈
+          </button>
+        </div>
 
-        const newBoard = [...board];
-        newBoard[index] = 'X';
-        setBoard(newBoard);
-
-        const result = checkWinner(newBoard);
-        if (result) {
-            setWinner(result);
-        } else {
-            setIsUserTurn(false);
-            setTimeout(() => makeAIMove(newBoard), 600);
-        }
-    };
-
-    useEffect(() => {
-        if (winner === 'X') {
-            setMessage("Kamu Memenangkan");
-            setTimeout(() => onComplete(), 3500); // Increased timeout to wait for staggered animation
-        } else if (winner === 'O' || winner === 'draw') {
-            setMessage(winner === 'draw' ? "Seri! Coba lagi yaa ❤️" : "Hampir! Sekali lagi...");
-            setTimeout(() => {
-                setBoard(Array(9).fill(null));
-                setWinner(null);
-                setIsUserTurn(true);
-            }, 1500);
-        }
-    }, [winner, onComplete]);
-
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="flex flex-col items-center justify-center space-y-10 relative z-10"
-        >
-            <h2 className="text-4xl font-playfair text-white text-center drop-shadow-lg max-w-xs whitespace-pre-line leading-tight">
-                {winner === 'X' ? "Kamu Memenangkan" : message}
-            </h2>
-            <div className="grid grid-cols-3 gap-3 p-4 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl">
-                {board.map((square, i) => (
-                    <button
-                        key={i}
-                        onClick={() => handleSquareClick(i)}
-                        className="w-20 h-20 sm:w-24 sm:h-24 bg-white/10 rounded-2xl flex items-center justify-center border border-white/10 hover:bg-white/20 transition-all duration-300 group"
-                    >
-                        <AnimatePresence mode="wait">
-                            {square === 'X' ? (
-                                <motion.div
-                                    key={winner === 'X' ? "heart" : "x"}
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    transition={winner === 'X' ? { delay: i * 0.15, type: 'spring' } : {}}
-                                >
-                                    {winner === 'X' ?
-                                        <Heart className="w-12 h-12 text-red-500 fill-red-500 filter drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]" /> :
-                                        <X className="w-12 h-12 text-white/80" />
-                                    }
-                                </motion.div>
-                            ) : square === 'O' ? (
-                                <motion.div key="o" initial={{ scale: 0 }} animate={{ scale: 1 }}>
-                                    <Circle className="w-12 h-12 text-pink-300 opacity-50" />
-                                </motion.div>
-                            ) : null}
-                        </AnimatePresence>
-                    </button>
-                ))}
-            </div>
-
-            <AnimatePresence>
-                {winner === 'X' && (
-                    <motion.h2
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl font-playfair text-white text-center drop-shadow-lg mt-4"
-                    >
-                        Hatiku
-                    </motion.h2>
-                )}
-            </AnimatePresence>
-        </motion.div>
-    );
+        <p className="mt-2 text-xs text-pink-200/70">
+          Hehehe, coba pilih jawabanmu 💕
+        </p>
+      </div>
+    </div>
+  );
 };
 
 // --- Step 3: Love Meter ---
