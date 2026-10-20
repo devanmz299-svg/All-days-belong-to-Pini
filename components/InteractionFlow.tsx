@@ -273,20 +273,15 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
 };
 
 // --- Step 4: Typewriter ---
-const TypewriterStep = ({
-  onComplete,
-}: {
-  onComplete: () => void;
-}) => {
+const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
   const [displayedText, setDisplayedText] = useState('');
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const title = 'Untuk Cantikku Pini';
     let index = 0;
-
-    let fadeTimer: ReturnType<typeof setTimeout>;
-    let nextTimer: ReturnType<typeof setTimeout>;
+    let fadeTimer: ReturnType<typeof setTimeout> | undefined;
+    let nextTimer: ReturnType<typeof setTimeout> | undefined;
 
     const typingTimer = setInterval(() => {
       index += 1;
@@ -294,21 +289,15 @@ const TypewriterStep = ({
 
       if (index >= title.length) {
         clearInterval(typingTimer);
-
-        fadeTimer = setTimeout(() => {
-          setIsFading(true);
-        }, 1000);
-
-        nextTimer = setTimeout(() => {
-          onComplete();
-        }, 2000);
+        fadeTimer = setTimeout(() => setIsFading(true), 1000);
+        nextTimer = setTimeout(() => onComplete(), 2000);
       }
     }, 130);
 
     return () => {
       clearInterval(typingTimer);
-      clearTimeout(fadeTimer);
-      clearTimeout(nextTimer);
+      if (fadeTimer) clearTimeout(fadeTimer);
+      if (nextTimer) clearTimeout(nextTimer);
     };
   }, [onComplete]);
 
@@ -321,9 +310,7 @@ const TypewriterStep = ({
     >
       <h1 className="font-sans text-2xl font-light tracking-[0.12em] text-pink-100 sm:text-4xl">
         {displayedText}
-        {!isFading && (
-          <span className="ml-1 animate-pulse text-pink-300">|</span>
-        )}
+        {!isFading && <span className="ml-1 animate-pulse text-pink-300">|</span>}
       </h1>
     </motion.div>
   );
