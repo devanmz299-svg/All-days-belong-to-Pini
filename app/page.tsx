@@ -27,7 +27,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen w-full bg-[#060010] text-white">
+    <main className="relative min-h-screen w-full overflow-x-hidden bg-[#060010] text-white">
       {!showGallery ? (
         <InteractionFlow
           onFlowComplete={() => setShowGallery(true)}
@@ -60,7 +60,7 @@ export default function Home() {
           </section>
 
           {/* Bagian pesan setelah foto */}
-          <section className="relative w-full px-5 pb-24 pt-12 sm:px-8 sm:pt-16">
+          <section className="relative z-20 w-full touch-pan-y px-5 pb-24 pt-12 sm:px-8 sm:pt-16" style={{ touchAction: 'pan-y' }}>
             <article className="mx-auto max-w-2xl">
               <div className="mb-10 h-px w-16 bg-pink-300/50" />
 
