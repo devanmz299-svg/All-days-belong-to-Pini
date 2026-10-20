@@ -306,8 +306,7 @@ const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: isFading ? 0 : 1 }}
       transition={{ duration: 1, ease: 'easeInOut' }}
-      className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center"
-    >
+      className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
       <h1 className="font-sans text-2xl font-light tracking-[0.12em] text-pink-100 sm:text-4xl">
         {displayedText}
         {!isFading && <span className="ml-1 animate-pulse text-pink-300">|</span>}
@@ -316,6 +315,9 @@ const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
   );
 };
 
+export default function InteractionFlow({onFlowComplete,}: {onFlowComplete: () => void;}) {
+  const [step, setStep] = useState(1);
+    
     return (
         <div className="fixed inset-0 z-50 bg-[#060010] flex items-center justify-center overflow-hidden">
             {/* Visual background layers */}
