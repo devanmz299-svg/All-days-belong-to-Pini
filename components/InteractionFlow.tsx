@@ -152,7 +152,7 @@ const GirlfriendQuestionStep = ({
         </h2>
 
         <p className="mb-5 text-sm text-pink-100">
-          Aku punya satu pertanyaan penting buat kamu...
+          Dupen punya satu pertanyaan buat pini hehe...
         </p>
 
         <div className="relative h-48 w-full overflow-hidden rounded-2xl">
@@ -160,7 +160,7 @@ const GirlfriendQuestionStep = ({
             onClick={onComplete}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink-500 px-8 py-3 font-bold text-white shadow-lg transition hover:scale-110"
           >
-            Iya ,❤️
+            Iyaaa
           </button>
 
           <button
@@ -174,12 +174,12 @@ const GirlfriendQuestionStep = ({
             }}
             className="rounded-full bg-gray-600 px-6 py-2 font-semibold text-white transition-all duration-150"
           >
-            Tidak 🙈
+            Tidak
           </button>
         </div>
 
         <p className="mt-2 text-xs text-pink-200/70">
-          Hehehe, coba pilih jawabanmu 💕
+          Hehehe, ayo coba pilih 
         </p>
       </div>
     </div>
