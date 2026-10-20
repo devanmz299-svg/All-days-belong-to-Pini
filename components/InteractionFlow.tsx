@@ -330,9 +330,11 @@ export default function InteractionFlow({ onFlowComplete }: { onFlowComplete: ()
                 {step === 1 && (
                     <LoveModeStep key="step1" onComplete={() => setStep(2)} />
                 )}
+                
                 {step === 2 && (
-                    <TicTacToeStep key="step2" onComplete={() => setStep(3)} />
+                  <GirlfriendQuestionStep key="step2" onComplete={() => setStep(3)} />
                 )}
+
                 {step === 3 && (
                     <LoveMeterStep key="step3" onComplete={() => setStep(4)} />
                 )}
