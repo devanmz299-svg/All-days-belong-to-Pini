@@ -185,7 +185,6 @@ export default function Home() {
                 <p>
                   dupen juga mau nanya, boleh tida?
                   pinii pernah ga si takut kehilangan dupen?
-                  arah kita satu tujuan kan, pin?
                   ada hal ga yang pinii butuh dari dupen tapi
                   pinii gaberani minta? ada ga ketakutan pinii
                   buat ngejalanin hubungan ini yang ga dupen tau?
