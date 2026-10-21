@@ -75,119 +75,119 @@ export default function Home() {
                 </p>
 
                 <p>
-                  Ganyangka ya kita bisa sedeket ini, Pinn.
-                  Yang awalnya cuman satu grup, saling save,
-                  terus kita saling follow TikTok, terus IG juga.
-                  Trus Dupen pernah post story buat map Roblox
+                  ganyangka ya kita bisa sedeket ini, pinn.
+                  yang awalnya cuman satu grup, saling save,
+                  terus kita saling follow tiktok, terus ig juga.
+                  trus Dupen pernah post story buat map Roblox
                   dan itu dikomen sama Pinii, "inpoo azaa map-nya".
                   Ini pas 3 September 2025.
                 </p>
 
                 <p>
-                  Udah itu kita hampir gapernah chattan, sampe
-                  Dupen live TikTok pas 17 Januari. Pinii komen,
-                  sampe dimana Pinii nanya sec account Dupen.
-                  Dari situlah dimulai kita mulai chattan, sering
+                  udah itu kita hampir gapernah chattan, sampe
+                  dupen live tiktok pas 17 Januari. pinii komen,
+                  sampe dimana pinii nanya sec account dupen.
+                  dari situlah dimulai kita mulai chattan, sering
                   tapi ga sering banget pas Januari-nya. Akhirnya
                   kita bikin api di 28 Februari. Banyak banget
                   lika-liku, ternyata bisa sampai sekarang.
                 </p>
 
                 <p>
-                  Pinii pernah nanya ke Dupen, "percaya ga jodoh
-                  itu cerminan diri?" Padahal mah jodohnya di depan
-                  mata, heheee. Pinii juga bilang, "ada juga yang
+                  pinii pernah nanya ke dupen, "percaya ga jodoh
+                  itu cerminan diri?" padahal mah jodohnya di depan
+                  mata, heheee. pinii juga bilang, "ada juga yang
                   berbeda tapi melengkapi".
                 </p>
 
                 <p>
-                  Pinii juga pernah ngirim video TikTok pas 18 Mei:
+                  Pinii juga pernah ngirim video tiktok pas 18 Mei:
                   <span className="mt-3 block border-l-2 border-pink-300/40 pl-4 italic text-white/90">
                     "I choose you. And I'll choose you over and over.
                     Without pause, without a doubt. In a heartbeat.
                     I'll keep choosing you."
                   </span>
-                  Sekarang bagian Dupen yang bakal buktiin.
+                  Sekarang bagian dupen yang bakal buktiin.
                 </p>
 
                 <p>
-                  Makasih ya, Pinii, buat semuanya. Trus maaf juga
-                  mungkin terkadang Dupen nyebelin.
+                  Makasih ya, pinii, buat semuanya. trus maaf juga
+                  mungkin terkadang dupen nyebelin.
                 </p>
 
                 <p>
-                  Dupen berharap kita sama-sama usahain terus
-                  supaya kita terus bersama. Trus juga Dupen
+                  dupen berharap kita sama-sama usahain terus
+                  supaya kita terus bersama. trus juga dupen
                   berharap kita punya satu tujuan yang sama.
-                  Semogaa tahapan ini sampai, trus Dupen mau kita
-                  berkembang bareng-bareng. Dupen juga seneng
-                  banget kalau dilibatkan dalam kehidupan Pinii.
+                  semogaa tahapan ini sampai, trus dupen mau kita
+                  berkembang bareng-bareng. dupen juga seneng
+                  banget kalau dilibatkan dalam kehidupan pinii.
                 </p>
 
                 <p>
-                  Owh iya, Pin, Dupen juga sekarang sering pulang
-                  ke Serang kan. Terkadang juga Dupen seneng di
-                  Cilegon. Kalau Dupen ke Serang, Dupen berharap
-                  Pinii mau ngajakin maen, hehee, atau butuh
-                  sesuatu, Dupen bisa langsung otw.
+                  Owh iya, pin, dupen juga sekarang sering pulang
+                  ke serang kan. terkadang juga dupen seneng di
+                  cilegon. kalau dupen ke serang, dupen berharap
+                  pinii mau ngajakin maen, hehee, atau butuh
+                  sesuatu, dupen bisa langsung otw.
                 </p>
 
                 <p>
-                  Kalau di Cilegon terus ngasih taunya malem,
+                  Kalau di cilegon terus ngasih taunya malem,
                   kemungkinannya takut ga jadi maen kaya waktu
-                  itu karena kemaleman. Tapi kalau butuh sesuatu
-                  di Cilegon juga bisa, cuman kalau di Serang
+                  itu karena kemaleman. tapi kalau butuh sesuatu
+                  di cilegon juga bisa, cuman kalau di serang
                   bisa lebih cepet.
                 </p>
 
                 <p>
-                  Trus kalau yang Dupen seneng di Cilegon, kalau
-                  Pinii lagi sibuk dan mau call-an biar lebih seru
-                  dan ga berisik, Dupen langsung ke Cilegon.
-                  Begitu deh.
+                  trus kalau yang dupen seneng di cilegon, kalau
+                  pinii lagi sibuk dan mau callan biar lebih seru
+                  dan ga berisik, dupen langsung ke cilegon.
+                  begitu deh.
                 </p>
 
                 <p>
-                  Pinii, Dupen boleh minta sesuatu tida?
-                  Dupen pengen Pinii ngabarin Dupen apa pun itu.
-                  Tapi kalau semisal Pinii ada masalah dan ga
-                  sempet ngabarin Dupen, it's okay, tida apa-apa.
-                  Soalnya kabar Pinii tu penting banget bagi Dupen.
+                  pinii, dupen boleh minta sesuatu tida?
+                  dupen pengen pinii ngabarin Dupen apa pun itu.
+                  tapi kalau semisal pinii ada masalah dan ga
+                  sempet ngabarin dupen, it's okay, tida apaapa.
+                  Soalnya kabar pinii tu penting banget bagi dupen.
                 </p>
 
                 <p>
-                  Pinii juga kalau mau cerita apa pun itu,
-                  Dupen dengerin kok. Kalau yang tentang cerita
-                  ini, Pinii juga udah ngasih tau Dupen kan.
-                  Okeii, tapi Pinii perlu tau kalau Pinii mau
+                  pinii juga kalau mau cerita apa pun itu,
+                  dupen dengerin kok. Kalau yang tentang cerita
+                  ini, Pinii juga udah ngasih tau dupen kan.
+                  okeii, tapi pinii perlu tau kalau pinii mau
                   cerita apa pun itu, serandom apa pun itu,
                   Dupen mau dengerin kok.
                 </p>
 
                 <p>
-                  Trus Pinii juga ga perlu sungkan sama Dupen.
-                  Kalau butuh sesuatu, jemput, anter, butuh Dupen
-                  langsung buat cerita atau apa pun itu, Dupen
-                  usahain. Dupen gamau Pinii ngerasa sendiri.
+                  trus pinii juga ga perlu sungkan sama dupen.
+                  kalau butuh sesuatu, jemput, anter, butuh dupen
+                  langsung buat cerita atau apa pun itu,dupen
+                  usahain. dupen gamau pinii ngerasa sendiri.
                 </p>
 
                 <p>
-                  Dupen juga mau nanya, boleh tida?
-                  Pinii pernah ga si takut kehilangan Dupen?
-                  Arah kita satu tujuan kan, Pin?
-                  Ada hal ga yang Pinii butuh dari Dupen tapi
-                  Pinii gaberani minta? Ada ga ketakutan Pinii
-                  buat ngejalanin hubungan ini yang ga Dupen tau?
+                  dupen juga mau nanya, boleh tida?
+                  pinii pernah ga si takut kehilangan dupen?
+                  arah kita satu tujuan kan, pin?
+                  ada hal ga yang pinii butuh dari dupen tapi
+                  pinii gaberani minta? ada ga ketakutan pinii
+                  buat ngejalanin hubungan ini yang ga dupen tau?
                 </p>
 
                 <p>
-                  Tapi Pinii bisa liat Dupen. Dupen juga gapernah
+                  tapi pinii bisa liat dupen. dupen juga gapernah
                   neko-neko kalau udah nyiapin buat hubungan,
                   apalagi sampe ngejalaninnya.
                 </p>
 
                 <p>
-                  Prinsip Dupen gini:
+                  Prinsip dupen gini:
                   <span className="mt-3 block border-l-2 border-pink-300/40 pl-4 text-white">
                     "Dupen bakal usahain apa pun itu buat Pinii
                     selagi Dupen bisa."
@@ -195,22 +195,21 @@ export default function Home() {
                 </p>
 
                 <p>
-                  Trus juga:
+                  trus juga:
                   <span className="mt-3 block border-l-2 border-pink-300/40 pl-4 text-white">
-                    "Selagi Dupen ga macem-macem di sini,
-                    maka Pinii juga gabakal macem-macem."
+                    "saling percaya."
                   </span>
                   Ini anggapan karena kita jarang ketemu.
                 </p>
 
                 <p>
-                  Owh iya, dari semua pertanyaan ini Dupen mau
-                  tau sama mau ngeyakinin Pinii. Kalau buat
-                  waktunya, sambil berjalan Dupen tunggu kok.
+                  Owh iya, dari semua pertanyaan ini dupen mau
+                  tau sama mau ngeyakinin Pinii. kalau buat
+                  waktunya, sambil berjalan dupen tunggu kok.
                 </p>
 
                 <p className="pt-4 text-lg font-medium text-white">
-                  Dupen bakal belajar semua buat Pinii. 🫶🏼
+                  dupen bakal belajar semua buat pinii. 🫶🏼
                 </p>
 
               </div>
@@ -218,7 +217,7 @@ export default function Home() {
               <div className="mt-12 h-px w-full bg-white/10" />
 
               <p className="mt-6 text-center text-sm tracking-wide text-white/40">
-                always choosing you ♡
+                pini nifiniifoo lullabiee pwddipee ♡
               </p>
             </article>
           </section>
