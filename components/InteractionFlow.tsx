@@ -274,49 +274,49 @@ const LoveMeterStep = ({ onComplete }: { onComplete: () => void }) => {
 
 // --- Step 4: Typewriter ---
 const TypewriterStep = ({ onComplete }: { onComplete: () => void }) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [isFading, setIsFading] = useState(false);
+    const text = "Happy Birthday!!!!";
+    const [displayedText, setDisplayedText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
 
-  useEffect(() => {
-    const title = 'Untuk Cantikku Pini';
-    let index = 0;
-    let fadeTimer: ReturnType<typeof setTimeout> | undefined;
-    let nextTimer: ReturnType<typeof setTimeout> | undefined;
+    useEffect(() => {
+        let timer: NodeJS.Timeout;
+        if (!isDeleting && displayedText !== text) {
+            timer = setTimeout(() => {
+                setDisplayedText(text.slice(0, displayedText.length + 1));
+            }, 150);
+        } else if (!isDeleting && displayedText === text) {
+            timer = setTimeout(() => setIsDeleting(true), 2500);
+        } else if (isDeleting && displayedText !== "") {
+            timer = setTimeout(() => {
+                setDisplayedText(text.slice(0, displayedText.length - 1));
+            }, 80);
+        } else if (isDeleting && displayedText === "") {
+            onComplete();
+        }
+        return () => clearTimeout(timer);
+    }, [displayedText, isDeleting, onComplete, text]);
 
-    const typingTimer = setInterval(() => {
-      index += 1;
-      setDisplayedText(title.slice(0, index));
-
-      if (index >= title.length) {
-        clearInterval(typingTimer);
-        fadeTimer = setTimeout(() => setIsFading(true), 1000);
-        nextTimer = setTimeout(() => onComplete(), 2000);
-      }
-    }, 130);
-
-    return () => {
-      clearInterval(typingTimer);
-      if (fadeTimer) clearTimeout(fadeTimer);
-      if (nextTimer) clearTimeout(nextTimer);
-    };
-  }, [onComplete]);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isFading ? 0 : 1 }}
-      transition={{ duration: 1, ease: 'easeInOut' }}
-      className="relative z-10 flex min-h-screen w-full items-center justify-center px-6 text-center">
-      <h1 className="font-sans text-2xl font-light tracking-[0.12em] text-pink-100 sm:text-4xl">
-        {displayedText}
-        {!isFading && <span className="ml-1 animate-pulse text-pink-300">|</span>}
-      </h1>
-    </motion.div>
-  );
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, filter: 'blur(20px)' }}
+            className="flex items-center justify-center p-8 relative z-10"
+        >
+            <h1 className="font-sans text-2xl font-light tracking-[0.12em] text-pink-100 sm:text-4xl">
+                {displayedText}
+                <motion.span
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ repeat: Infinity, duration: 0.8 }}
+                    className="inline-block w-2 sm:w-4 h-12 sm:h-20 bg-red-500 ml-2 align-middle"
+                />
+            </h1>
+        </motion.div>
+    );
 };
 
-export default function InteractionFlow({onFlowComplete,}: {onFlowComplete: () => void;}) {
-  const [step, setStep] = useState(1);
+export default function InteractionFlow({ onFlowComplete }: { onFlowComplete: () => void }) {
+    const [step, setStep] = useState(1);
     
     return (
         <div className="fixed inset-0 z-50 bg-[#060010] flex items-center justify-center overflow-hidden">
