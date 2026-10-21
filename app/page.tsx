@@ -58,7 +58,18 @@ export default function Home() {
               </p>
             </div>
           </section>
-
+          
+         {/* Bagian struktur tahapan */}
+         <section className="relative w-full bg-[#F7F4EF] px-5 py-16 text-[#625B55] sm:py-20">
+          <div className="mx-auto max-w-md">
+           <img
+            src="/level-structure.png"
+            alt="Struktur tahapan Level 1, Level 2, dan Level 3"
+            className="h-auto w-full object-contain"
+          />
+         </div>
+       </section>
+          
           {/* Bagian pesan setelah foto */}
           <section className="relative z-20 w-full touch-pan-y px-5 pb-24 pt-12 sm:px-8 sm:pt-16" style={{ touchAction: 'pan-y' }}>
             <article className="mx-auto max-w-2xl">
