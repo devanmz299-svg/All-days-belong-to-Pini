@@ -82,7 +82,7 @@ export default function Home() {
                 </p>
 
                 <p>
-                  Api kita 200 Yeyyyyy! 🫶🏼
+                  Api kita 200 Yeyyyyy! 
                 </p>
 
                 <p>
@@ -159,6 +159,12 @@ export default function Home() {
                 </p>
 
                 <p>
+                bukan berarti dupen gaadaa tugas gaada kesibukan,
+                cuman semuanya dupen sempetin dan dupen usahain
+                aja buat pini.
+                </p>
+
+                <p>
                   pinii, dupen boleh minta sesuatu tida?
                   dupen pengen pinii ngabarin Dupen apa pun itu.
                   tapi kalau semisal pinii ada masalah dan ga
@@ -215,11 +221,13 @@ export default function Home() {
                 <p>
                   Owh iya, dari semua pertanyaan ini dupen mau
                   tau sama mau ngeyakinin Pinii. kalau buat
-                  waktunya, sambil berjalan dupen tunggu kok.
+                  waktunya, maaf mungkin dupen belum bisa jadi
+                  yang pini pengen, tapi dupen usahain dupen 
+                  jadi yang pini pengen.
                 </p>
 
                 <p className="pt-4 text-lg font-medium text-white">
-                  dupen bakal belajar semua buat pinii. 🫶🏼
+                  dupen bakal belajar semua buat pinii. 
                 </p>
 
               </div>
