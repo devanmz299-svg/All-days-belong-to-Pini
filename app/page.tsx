@@ -63,7 +63,7 @@ export default function Home() {
          <section className="relative w-full bg-[#F7F4EF] px-5 py-16 text-[#625B55] sm:py-20">
           <div className="mx-auto max-w-md">
            <img
-            src="/level-structure.png"
+            src="/level-structure.jpeg"
             alt="Struktur tahapan Level 1, Level 2, dan Level 3"
             className="h-auto w-full object-contain"
           />
